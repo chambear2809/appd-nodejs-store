@@ -1,3 +1,16 @@
+require("appdynamics").profile({
+ controllerHostName: 'ciscocvd.saas.appdynamics.com',
+ controllerPort: 443,
+ 
+ // If SSL, be sure to enable the next line
+ controllerSslEnabled: true,
+ accountName: 'ciscocvd',
+ accountAccessKey: 'pexlsb7dlfk7',
+ applicationName: 'store',
+ tierName: 'store',
+ nodeName: 'process' // The controller will automatically append the node name with a unique number
+});
+
 require("dotenv").config();
 const { MONGO_ATLAS, MONGO_LOCAL,NODE_ENV } = process.env;
 const MONGO = NODE_ENV === "development" ? MONGO_LOCAL : MONGO_ATLAS;
